@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+Auth::routes();
+
+Route::group(['middleware' => ['web']], function () {
+	Route::get('/dashboard','AdminController@dashboard');
+    Route::post('/import/username','AdminController@importUsername');
 });
