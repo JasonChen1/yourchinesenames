@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['auth']], function () {
 	Route::get('/dashboard','AdminController@dashboard');
-    Route::post('/import/username','AdminController@importUsername');
+    Route::post('/import/{type}','AdminController@importCSV');
 });

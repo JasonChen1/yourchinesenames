@@ -11,5 +11,16 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+mix
+	.disableNotifications()
+	
+	// .js('resources/js/app.js', 'public/js')
+   	.sass('resources/sass/global.scss', 'public/css')
+   	.extract([
+	   	'vue',
+   		'axios'
+   	]);
+
+if(mix.inProduction()){
+	mix.version()
+}

@@ -4,9 +4,9 @@ namespace App;
 
 use App\BaseModel;
 
-class Surname extends BaseModel
+class Character extends BaseModel
 {
-    /**
+	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
@@ -14,7 +14,18 @@ class Surname extends BaseModel
 	protected $fillable = [
 		'character',
 		'pinyin',
+		'definition',
+		'radical',
+		'stroke_count',
+		'hsk_level',
+		'general_standard',
+		'frequency_rank',
 	];
-
-
 }
+
+	
+	
+	
+	
+	
+	
